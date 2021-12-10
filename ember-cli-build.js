@@ -19,8 +19,9 @@ module.exports = function (defaults) {
   });
 
   if (process.argv[3] === "TEST") {
-    const { inspect } = require("util");
-    console.log(inspect(app, { depth: 2 }));
+    // const { inspect } = require("util");
+    // console.log(inspect(app, { depth: 2 }));
+    console.log(app.toTree());
   }
 
   // Use `app.import` to add additional libraries to the generated
