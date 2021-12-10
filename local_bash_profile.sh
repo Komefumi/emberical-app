@@ -1,3 +1,8 @@
+DIST="deploy-there"
+CLEAR_DIST="rm -rf $DIST";
+CLEAR_DIST_AND="$CLEAR_DIST &&"
+OUT_DIST="-o $DIST"
 alias serve="ember server TEST"
-alias sbuild="ember build TEST"
-alias build="ember build --environment=production"
+
+alias sbuild="$CLEAR_DIST_AND ember build TEST $OUT_DIST"
+alias build="$CLEAR_DIST_AND ember build --environment=production -o $DIST"
