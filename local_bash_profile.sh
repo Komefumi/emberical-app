@@ -6,3 +6,4 @@ alias serve="ember server TEST"
 
 alias sbuild="$CLEAR_DIST_AND ember build TEST $OUT_DIST"
 alias build="$CLEAR_DIST_AND ember build --environment=production -o $DIST"
+alias deploy="firebase deploy"
