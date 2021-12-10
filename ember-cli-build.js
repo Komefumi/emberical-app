@@ -3,9 +3,22 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
+  const defaultConfig = ['css', 'js'].reduce((config, prop) => {
+    config[`minify${prop.toUpperCase()}`] = { enabled: false };
+    return config;
+  }, {});
+
   let app = new EmberApp(defaults, {
-    // Add options here
+    ...defaultConfig,
+    ...{
+      // Add options here
+    },
   });
+
+  if (process.argv[3] === 'ee') {
+    const { inspect } = require('util');
+    console.log(inspect(app, { depth: 2 }));
+  }
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
