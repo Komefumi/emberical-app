@@ -1,12 +1,15 @@
-'use strict';
+"use strict";
 
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
 module.exports = function (defaults) {
-  const defaultConfig = ['css', 'js'].reduce((config, prop) => {
+  const defaultConfig = ["css", "js"].reduce((config, prop) => {
     config[`minify${prop.toUpperCase()}`] = { enabled: false };
     return config;
   }, {});
+  defaultConfig.fingerprint = {
+    prepend: "http://komefumi.github.io/emberical-app/",
+  };
 
   let app = new EmberApp(defaults, {
     ...defaultConfig,
@@ -15,8 +18,8 @@ module.exports = function (defaults) {
     },
   });
 
-  if (process.argv[3] === 'ee') {
-    const { inspect } = require('util');
+  if (process.argv[3] === "TEST") {
+    const { inspect } = require("util");
     console.log(inspect(app, { depth: 2 }));
   }
 
