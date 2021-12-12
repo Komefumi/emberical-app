@@ -2,6 +2,7 @@ DIST="deploy-there"
 CLEAR_DIST="rm -rf $DIST";
 CLEAR_DIST_AND="$CLEAR_DIST &&"
 OUT_DIST="-o $DIST"
+alias files="tree -I 'node_modules|$DIST'"
 alias serve="ember server TEST"
 
 alias sbuild="$CLEAR_DIST_AND ember build TEST $OUT_DIST"
