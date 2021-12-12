@@ -2,7 +2,8 @@
 
 # compiled output
 /dist/
-/deploy-there/
+deploy-there/*
+!/deploy-there/_redirects
 /tmp/
 
 # dependencies
