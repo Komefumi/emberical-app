@@ -9,3 +9,5 @@ alias sbuild="$CLEAR_DIST_AND ember build TEST $OUT_DIST"
 alias build="$CLEAR_DIST_AND ember build --environment=production -o $DIST"
 
 alias remove="ember destroy"
+
+alias xmber="x-ember-cli"
