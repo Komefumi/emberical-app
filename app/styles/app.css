@@ -1,3 +1,8 @@
 body {
   text-align: center;
 }
+
+.people-list {
+  list-style: none;
+  padding: 0;
+}
