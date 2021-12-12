@@ -3,10 +3,13 @@
 const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
 module.exports = function (defaults) {
+  const defaultConfig = {};
+  /*
   const defaultConfig = ["css", "js"].reduce((config, prop) => {
     config[`minify${prop.toUpperCase()}`] = { enabled: false };
     return config;
   }, {});
+  */
   defaultConfig.fingerprint = {
     prepend: "http://komefumi.github.io/emberical-app/",
   };
